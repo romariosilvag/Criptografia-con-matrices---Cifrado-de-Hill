@@ -102,7 +102,7 @@ def encriptar(message, key):
         while len(message) % len(key) != 0:
             message = message + 'X'
             
-        # Se troce el mensaje en subsstrings de tamaño len(key) y se alamcenan como valores de un array
+        # Se divide el mensaje en subsstrings de tamaño len(key) y se alamcenan como valores de un array
 
         matrix_mensaje = [message[i:i + len(key)] for i in range(0,
                           len(message), len(key))]
@@ -210,7 +210,7 @@ def desencriptar(message, key):
         list_temp = []
     plaintext = plaintext_temp
 
-    # Se eleminan las X procedentes de su addicion en la encriptacion para tener bloques del tamaño de la clave
+    # Se eliminan las X procedentes de su adicion en la encriptacion para tener bloques del tamaño de la clave
 
     while plaintext[-1] == 'X':
         plaintext = plaintext.rstrip(plaintext[-1])
